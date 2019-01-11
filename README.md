@@ -1,4 +1,4 @@
-![DUCKCHATLOGO](https://downloader.disk.yandex.ru/disk/2d1745ce0ea3bbe55066e0a081107f6e7ec19eb9e9456226f7423b8002c4345f/5c38df28/Im4qclqbatIAFBFzjowplpD4JKHP02eFb7bxujo8suMcAGyq2UmoWgnoLMwYhm8AulUiv20kNHxCfosjv19Ilw%3D%3D?uid=0&filename=DuckChatLogo.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&fsize=205777&hid=fd611ab4d6ee4fe8a2e9621a558cb52c&media_type=image&tknv=v2&etag=8cb0f85bc17c4df412539bd1df9fbca2)
+![DUCKCHATLOGO](https://downloader.disk.yandex.ru/preview/f6c23cbc4387f3385eb596855f7cc98ba71e6d5d4446b574610857b026049e70/5c392346/70gwEFRFItt7qq7XZeuHJtlCYiifrGU7IxPf_mqMN33XosqrrUlxIFUUSigcPu5SAL8FL2fKwWcMAkECssTofw%3D%3D?uid=0&filename=DuckChatLogo.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&tknv=v2&size=2048x2048)
 
 ## Introduction
 **DuckChat** - simple messenger for important and exciting conversations. To start chatting - sign up and enter the room or create your own! The project runs on **Python 3.7** and **Aiohttp**.
