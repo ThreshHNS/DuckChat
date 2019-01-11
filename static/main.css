@@ -1,0 +1,245 @@
+body {
+    font-family: 'Raleway', sans-serif;
+	background: linear-gradient(to right top, #57c9f9, #72cbf1, #88ccea, #9bcde3, #accedc) no-repeat center center fixed;
+	font-size: 14px;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+}
+
+h4 {
+	font-size: 1.2rem;
+}
+
+h5 {
+	font-size: 1rem;
+}
+
+.logotype img {
+  height: 115px;
+  width: auto;
+}
+
+.navbar-right {
+	background: #fff;
+	border-right: 1px solid #E6E6E6;
+}
+
+.navbar-right .nav-link i {
+	padding-right: 4px;
+	font-size: 12px;
+}
+
+.navbar-right ul li:nth-of-type(3) {
+  padding-top: 5px;
+}
+
+.navbar-right  ul li .active {
+	color: #CB4AE9;
+}
+
+.navbar-right ul li .disabled:hover {
+	color: #CB4AE9;
+}
+
+.main-left {
+	background-color: #F6F6F6;
+}
+
+.main-header, .navbar-header {
+	border-bottom: 1px solid #E6E6E6;
+	background: #fff;
+}
+
+.main-header h4, .navbar-header h4 {
+	padding: 15px 15px 0 15px;
+}
+
+.main-header h4 small,
+.navbar-header h4 small {
+	color: #6c757d;
+
+}
+
+.navbar-header h4 small i {
+	padding-right: 4px;
+    font-size: 10px;
+    color: #52E2A7;
+}
+.main-chat-area {
+    padding-top: 10px;
+    overflow-y: scroll;
+    height: 60vh;
+}
+
+.main-chat-area .media {
+	padding-bottom: 7px;
+}
+
+.main-chat-create {
+  height: 60vh;
+}
+
+.main-chat-create .form-group{
+  padding-top: .5rem;
+}
+
+.main-chat-send {
+	background: #fff;
+}
+
+.main-chat-send .card-footer {
+	background: none;;
+	border: none;
+}
+
+.main-chat-send .form-control,
+.main-chat-send .form-control:not(:last-child) {
+	margin-right: 20px;
+	border: 1px solid #ced4da !important;
+    border-radius: .25rem ;
+    font-size: 15px;
+
+}
+
+.main-chat-send .btn-send {
+	border: 0px;
+    padding: 8px 10px;
+    float: right;
+    color: #009EF7;
+    font-size: 18px;
+    background: #fff;
+    cursor: pointer;
+}
+
+.main-chat-send .card-footer {
+	padding: .75rem 0;
+}
+
+.media-body
+.media-body h5 {
+	font-size: 15px;
+}
+
+.container {
+  max-width: 960px;
+}
+
+footer .copyright {
+	color: #212529;
+	font-size: 16px;
+}
+
+footer .links li a{
+	color: #0C6285;
+	font-size: 18px;
+}
+
+footer .links li a:hover{
+	color: #CB4AE9;
+	text-decoration: none;
+}
+
+.border-top { border-top: 1px solid #e5e5e5; }
+.border-bottom { border-bottom: 1px solid #e5e5e5; }
+.border-top-gray { border-top-color: #adb5bd; }
+
+.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+
+.lh-condensed { line-height: 1.25; }
+
+.form-heading { color:#fff; font-size:23px;}
+
+.panel h2{ color:rgb(33, 37, 41); font-size:18px; margin:0 0 8px 0;}
+
+.panel p { color:#777777; font-size:14px; margin-bottom:30px; line-height:24px;}
+
+.login-form .form-control {
+  background: #f7f7f7 none repeat scroll 0 0;
+  border: 1px solid #d4d4d4;
+  border-radius: 4px;
+  font-size: 14px;
+  height: 50px;
+  line-height: 50px;
+}
+.main-div {
+  background: rgba(255,255,255,.9) none repeat scroll 0 0;
+  border-radius: 2px;
+  margin: 10px auto 30px;
+  max-width: 50%;
+  padding: 50px 70px 60px 71px;
+}
+
+.login-form .form-group {
+  margin-bottom:10px;
+}
+
+.login-form{ text-align:center;}
+
+.forgot p {
+  color: #777777;
+  font-size: 14px;
+}
+
+.forgot p a {
+  color: #009EF7;
+}
+.forgot p a:hover {
+  color: #0492e3;
+  text-decoration: none;
+  -webkit-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.login-form  .btn.btn-primary {
+  background: #009EF7 none repeat scroll 0 0;
+  border-color: #009EF7;
+  color: #ffffff;
+  font-size: 14px;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  padding: 0;
+}
+
+.login-form  .btn.btn-primary:hover {
+  background-color: #0492e3;
+  border-color: #0492e3;
+  -webkit-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+.forgot {
+  text-align: left; margin-bottom:30px;
+}
+
+.botto-text {
+  color: #ffffff;
+  font-size: 14px;
+  margin: auto;
+}
+
+.login-form .btn.btn-primary.reset {
+  background: #ff9900 none repeat scroll 0 0;
+}
+
+.back { text-align: left; margin-top:10px;}
+
+.back a {color: #444444; font-size: 13px;text-decoration: none;}
+
+
+@media (max-width: 991.98px) {
+  .login-form .main-div {
+    max-width: 95%;
+    padding: 15px 30px 20px 16px
+  }
+}
+
+@media (max-width: 575.98px) {
+  .logotype img {
+    height: 80px;
+  }
+}

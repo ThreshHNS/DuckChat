@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<div class="col-md-8  main-left">
+          <div class="row main-header d-block">
+            <h4>Главная страница
+            </h4>
+          </div>
+          <div class="row main-chat-area">
+            <div class="col-md-12">
+            </div>
+          </div>
+          <div class="row main-chat-send mt-auto">
+            <div class="col-md-12">
+              <div class="card-footer">
+                  <form class="input-group" id="send">
+                  <input type="text" class="form-control" name="text" placeholder="type here..." aria-label="type here..." aria-describedby="button-addon2">
+                  <button class="btn-send"><i class="fa fa-send"></i></button>
+                </form>
+              </div>
+            </div>
+          </div>
+      </div>
+{% endblock %}

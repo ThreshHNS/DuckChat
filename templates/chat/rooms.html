@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<div class="col-md-8  main-left">
+          <div class="row main-header d-block">
+            <h4>Create new room</br>
+                <small>You can create your own room<small>
+            </h4>
+          </div>
+          <div class="row main-chat-create py-3">
+            <div class="col-md-12">
+				<form action="{{ app.router['create_room'].url_for() }}" action="" method="POST">
+			        <div class="form-group">
+			            <input name="roomname" type="text" class="form-control" id="roomname" maxlength="32" placeholder="Type room name here...">
+			        </div>
+			        <button type="submit" class="btn btn-primary">Create room</button>
+	    		</form>
+            </div>
+      </div>
+    </div>	  	
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<div class="col-md-8  main-left">
+          <div class="row main-header d-block">
+            <h4>Chat room - #{{ room.name }} </br>
+              <small><i class="fa fa-clock-o"></i> {{ room.created_date.strftime("%d.%m.%y") }}</small>
+            </h4>
+          </div>
+          <div class="row main-chat-area">
+            <div class="col-md-12">
+              <ul class="list-unstyled" id="messages">
+                {% for message in room_messages %}
+                    {% if not message.user_name %}
+                        <li class="media">
+                            <div class="media-body">
+                                {{ message.text }}
+                            </div>
+                        </li>
+                    {% else %}    
+                        <li class="media">
+                          <div class="media-body">
+                            <h5 class="mt-0 mb-1">@{{ message.user_name}} <small>{{ message.created_date.strftime('%Y-%m-%d %H:%M') }}</small></h5>
+                            {{ message.text }}
+                          </div>
+                        </li>
+                    {% endif %}
+                {% endfor %}        
+              </ul>
+            </div>
+          </div>
+          <div class="row main-chat-send mt-auto">
+            <div class="col-md-12">
+              <div class="card-footer">
+                  <form class="input-group" id="send">
+                  <input type="text" required class="form-control" name="text" placeholder="type here..." aria-label="type here..." aria-describedby="button-addon2">
+                  <button class="btn-send"><i class="fa fa-send"></i></button>
+                </form>
+              </div>
+            </div>
+          </div>
+      </div>
+{% endblock %}
+
+{% block extra_scripts %}
+    <script type="text/javascript">var WS_URL = "{{ app.router['ws'].url_for(slug=room.name) }}";</script>
+    <script src="{{ app.router.static.url_for(filename='chat.js') }}"></script>
+{% endblock %}

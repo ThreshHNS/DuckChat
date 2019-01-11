@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{% block title %}DuckСhat - Увлекательные беседы{% endblock %}</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.css">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- DuckChat core CSS-->
+    <link href="{{ app.router.static.url_for(filename='main.css') }}" rel="stylesheet">
+    <link href="{{ app.router.static.url_for(filename='fonts/raleway.css') }}" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="container">
+      <div class="{% block padtop %}py-5{% endblock %} text-center">
+        <a class="logotype" href="#">
+          <img src="{{ app.router.static.url_for(filename='logo.png') }}" alt="">
+        </a>
+        <p class="lead">DuckChat - это простой мессенджер для важных и увлекательных бесед. Чтобы начать общение - зарегистрируйтесь и войдите в комнату или создайте свою собственную! </br>Проект работает на Python 3.7 и Aiohttp.</p>
+        {% for kind, msg in get_messages(request) %}
+            <div class="alert alert-{{ kind }}" role="alert">
+                {{ msg }}
+            </div>
+        {% endfor %}
+
+      </div>
+      
+      {% block content %}
+      <div class="row h-100">
+        <div class="col-md-4 navbar-right">
+          <div class="row mb-3 navbar-header d-block">
+            <h4>DuckChat</br>
+          {% if request.user %}
+                <small>
+                    <i class="fa fa-circle"> </i>{{ request.user.username }}
+                </small>
+            </h4>
+          </div>
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link disabled" href="{{ app.router['logout'].url_for() }}"><i class="fa fa-power-off"></i>Log out</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="{{ app.router['create_room'].url_for() }}"><i class="fa fa-plus"></i>Create new room</a>
+            </li>   
+            {% for room in chat_rooms %}
+                <li class="nav-item">
+                    <a class="nav-link {% if request.match_info._route.name == 'room' and request.match_info['slug'] == room.name %} active{% endif %}" href="{{ app.router['room'].url_for(slug=room.name) }}">#{{ room.name }}</a>
+                </li>
+            {% endfor %}
+          </ul> 
+            {% else %}
+                <a href="{{ app.router['login'].url_for() }}">
+                    <small><i class="fa fa-circle red-circle"></i>Login</small>
+                </a>
+              </h4> 
+          </div>    
+          {% endif %}
+          </div>    
+        {% block main %}
+        {% endblock %}
+
+      </div>
+      {% endblock %}
+
+      <footer class="{% block padfooter %}my-5 pt-5{% endblock %} text-muted text-center text-small">
+        <p class="mb-1 copyright">&copy; 2019 Velts Andrey</p>
+        <ul class="list-inline links">
+          <li class="list-inline-item"><a href="#"><i class="fa fa-github"></i></a></li>
+          <li class="list-inline-item"><a href="#"><i class="fa fa-instagram"></i></a></li>
+          <li class="list-inline-item"><a href="#"><i class="fa fa-vk"></i></a></li>
+        </ul>
+      </footer>
+    </div>
+
+    <script src="{{ app.router.static.url_for(filename='jquery-3.2.0.min.js') }}"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script> 
+    {% block extra_scripts %}{% endblock %}
+  </body>
+</html>
