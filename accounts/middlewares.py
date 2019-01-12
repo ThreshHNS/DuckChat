@@ -14,4 +14,7 @@ async def request_user_middleware(request, handler):
     if user_id:
         user = await User.get(user_id)
         request.user = user
+        if not user:
+			request.session.remove('user')
+		request.user = user
     return await handler(request)
