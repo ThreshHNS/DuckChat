@@ -103,7 +103,7 @@ class RoomWebSocket(web.View):
                     await self.broadcast(message)
         
         await self.disconnect(user.username, ws)
-        
+        return ws
     
     async def broadcast(self, message):
         """ Send messages to all in this room """
