@@ -1,5 +1,5 @@
 import os
-import logging 
+import logging
 
 BASE_DIR = os.path.dirname(__file__)
 
