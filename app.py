@@ -23,7 +23,7 @@ async def init_app(loop):
     """
 
     redis_pool = await aioredis.create_pool(settings.REDIS, loop=loop)
-    
+
     # setup middlewares
     middlewares = [
         session_middleware(RedisStorage(redis_pool)),
@@ -32,12 +32,13 @@ async def init_app(loop):
 
     app = web.Application(middlewares=middlewares)
     app.redis_pool = redis_pool
-    
+
     await db.set_bind(settings.DATABASE_URL)
     # Create tables
     await db.gino.create_all()
 
-    app.router.add_static(settings.STATIC_URL, settings.STATIC_DIR, name='static')
+    app.router.add_static(settings.STATIC_URL,
+                          settings.STATIC_DIR, name='static')
     app.db = db
 
     # Jinja(template system) setup
@@ -68,14 +69,14 @@ if __name__ == '__main__':
         aiohttp_autoreload.start()
 
     logger.debug(f"Start web app -  {settings.APP_HOST}:{settings.APP_PORT}")
-    web.run_app(app, host=settings.APP_HOST, port=settings.APP_PORT, access_log=logger)
-    
+    web.run_app(app, host=settings.APP_HOST,
+                port=settings.APP_PORT, access_log=logger)
     try:
-        loop.run_forever() 
-    except KeyboardInterrupt:    		
+        loop.run_forever()
+    except KeyboardInterrupt:
         logger.warning("Keyboard Interrupt ^C")
     finally:
         logger.warning("Stop server begin")
         loop.run_until_complete(close_app())
-        loop.close()    
+        loop.close()
     logger.warning("Stop server end")
