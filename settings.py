@@ -7,7 +7,7 @@ APP_HOST = os.environ.get('HOST', '0.0.0.0')
 APP_PORT = os.environ.get('PORT', 80)
 
 # logging
-logger = logging.getLogger('app')
+logger = logging.getLogger('duckchat')
 logger.setLevel(logging.DEBUG)
 console = logging.StreamHandler()
 console.setLevel(logging.DEBUG)
