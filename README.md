@@ -29,4 +29,4 @@ You can always make a pull request!
 ## Special thanks 
 - [samael500](https://maks.live/articles/python/prostoi-chat-na-aiohttp/) - Tutorial about WebSockets with aiohttp.
 
-@ThreshHNS http://velts.me/
+@ThreshHNS http://chat.velts.me/
