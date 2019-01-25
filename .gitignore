@@ -109,6 +109,6 @@ venv.bak/
 
 # Settings
 local_settings.py
-postgres
+vsco
 todo
-logo.psd
+.psd
