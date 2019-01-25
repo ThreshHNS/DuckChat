@@ -59,6 +59,7 @@ async def close_app():
     """
     app.redis_pool.close()
     await app.redis_pool.wait_closed()
+    await app.db.pop_bind().close()
 
 
 if __name__ == '__main__':
